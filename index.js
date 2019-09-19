@@ -24,9 +24,16 @@ function addItem() {
 
 function checkItem() {
   $('ul').on('click', '.shopping-item-toggle', function () {
-    console.log($(event.target));
+    // console.log($(event.target));
     $(event.target).closest('li').children('span').toggleClass('shopping-item__checked');
     //add to the span that is the direct descendent of the list (which is the parent list of the clicked button)
+  });
+}
+
+function deleteItem(){
+  $('ul').on('click', '.shopping-item-delete', function() {
+    console.log('delete');
+    $(event.target).closest('li').remove();
   });
 }
 
@@ -42,6 +49,6 @@ function checkItem() {
 
 
 
-
 $(addItem);
 $(checkItem);
+$(deleteItem);
