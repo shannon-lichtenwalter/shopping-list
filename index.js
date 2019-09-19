@@ -3,9 +3,9 @@
 function addItem() {
   $('form').submit(function () {
     event.preventDefault();
-    console.log($('input').val());
+    // console.log($('input').val());
     let newItem = $('input').val();
-    // I want to make it a list item and add the same classes
+    // I want to make it a list item and add the same classes and buttons and styles
     $('ul').append(`
     <li>
         <span class="shopping-item">${newItem}</span>
@@ -22,4 +22,26 @@ function addItem() {
   });
 }
 
+function checkItem() {
+  $('ul').on('click', '.shopping-item-toggle', function () {
+    console.log($(event.target));
+    $(event.target).closest('li').children('span').toggleClass('shopping-item__checked');
+    //add to the span that is the direct descendent of the list (which is the parent list of the clicked button)
+  });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $(addItem);
+$(checkItem);
