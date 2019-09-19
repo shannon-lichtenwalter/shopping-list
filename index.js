@@ -32,7 +32,7 @@ function checkItem() {
 
 function deleteItem(){
   $('ul').on('click', '.shopping-item-delete', function() {
-    console.log('delete');
+    // console.log('delete');
     $(event.target).closest('li').remove();
   });
 }
